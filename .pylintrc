@@ -1,0 +1,117 @@
+[MASTER]
+extension-pkg-allow-list=
+extension-pkg-whitelist=
+fail-under=7.5
+ignore=CVS
+ignore-patterns=
+init-hook='import sys; sys.path.append("agents")'
+jobs=1
+limit-inference-results=100
+load-plugins=
+persistent=yes
+suggestion-mode=yes
+unsafe-load-any-extension=no
+
+[MESSAGES CONTROL]
+disable= no-name-in-module,
+    no-self-argument,
+    duplicate-code,
+    too-few-public-methods,
+    cyclic-import,
+    import-outside-toplevel,
+    too-many-arguments,
+    too-many-nested-blocks,
+    dangerous-default-value,
+    too-many-public-methods,
+    too-many-locals,
+    no-member,
+    import-error,
+    global-statement,
+    global-variable-not-assigned,
+    invalid-name,
+    not-callable,
+    broad-exception-caught
+enable=c-extension-no-member
+
+[REPORTS]
+output-format=text
+reports=no
+score=yes
+evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+
+[REFACTORING]
+max-nested-blocks=5
+never-returning-functions=sys.exit,argparse.parse_error
+
+[LOGGING]
+logging-format-style=old
+logging-modules=logging
+
+[MISCELLANEOUS]
+notes=FIXME,
+      XXX,
+      TODO
+
+[STRING]
+check-quote-consistency=no
+check-str-concat-over-line-jumps=no
+
+[VARIABLES]
+allow-global-unused-variables=yes
+callbacks=cb_,_cb
+dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
+ignored-argument-names=_.*|^ignored_|^unused_
+init-import=no
+redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
+
+[TYPECHECK]
+contextmanager-decorators=contextlib.contextmanager
+ignore-mixin-members=yes
+ignore-none=yes
+ignore-on-opaque-inference=yes
+ignored-classes=optparse.Values,thread._local,_thread._local
+ignored-modules=cv2
+missing-member-hint=yes
+missing-member-hint-distance=1
+missing-member-max-choices=1
+
+[FORMAT]
+expected-line-ending-format=
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+indent-after-paren=4
+indent-string='    '
+max-line-length=100
+max-module-lines=1000
+single-line-class-stmt=no
+single-line-if-stmt=no
+
+[BASIC]
+argument-naming-style=snake_case
+attr-naming-style=snake_case
+bad-names=foo,bar,baz,toto,tutu,tata
+class-attribute-naming-style=any
+class-const-naming-style=UPPER_CASE
+class-naming-style=PascalCase
+const-naming-style=UPPER_CASE
+docstring-min-length=-1
+function-naming-style=snake_case
+good-names=i,j,k,ex,Run,df,id,_
+include-naming-hint=no
+inlinevar-naming-style=any
+method-naming-style=snake_case
+module-naming-style=snake_case
+no-docstring-rgx=^_
+property-classes=abc.abstractproperty
+variable-naming-style=snake_case
+
+[DESIGN]
+max-args=5
+max-attributes=7
+max-bool-expr=5
+max-branches=12
+max-locals=15
+max-parents=7
+max-public-methods=20
+max-returns=6
+max-statements=50
+min-public-methods=2
